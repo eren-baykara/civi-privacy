@@ -31,11 +31,13 @@
   .updated { color: #666; font-size: 0.9em; }
   .nav { margin: 20px 0 40px; font-size: 0.95em; }
   .nav a { margin-right: 16px; }
+  .table-wrap { overflow-x: auto; }
   table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: 0.92em; }
   th, td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; vertical-align: top; }
   th { background: rgba(127,127,127,0.08); }
   code { background: rgba(127,127,127,0.12); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
   .lang-block { scroll-margin-top: 20px; }
+  .summary { background: rgba(127,127,127,0.08); border-radius: 8px; padding: 4px 16px; }
   footer { margin-top: 60px; font-size: 0.85em; color: #777; }
 </style>
 </head>
@@ -44,6 +46,7 @@
 <div class="nav">
   <a href="#tr">🇹🇷 Türkçe</a>
   <a href="#en">🇬🇧 English</a>
+  <a href="support.html">Destek / Support</a>
 </div>
 
 <!-- ============================================================ -->
@@ -52,196 +55,284 @@
 <div id="tr" class="lang-block">
 
 <h1>Çivi — Gizlilik Politikası</h1>
-<p class="updated">Son güncelleme: 16 Eylül 2026</p>
+<p class="updated">Son güncelleme: 30 Eylül 2026</p>
 
 <p>Bu Gizlilik Politikası, <strong>Çivi</strong> mobil uygulamasının ("Uygulama", "Çivi")
-kişisel verileri nasıl işlediğini açıklar. Veri sorumlusu aşağıda belirtilmiştir.</p>
+kişisel verileri nasıl işlediğini açıklar. Türkçe metin esas metindir; İngilizce metin
+bilgilendirme amaçlıdır.</p>
+
+<div class="summary">
+<p><strong>Kısaca:</strong></p>
+<ul>
+  <li>Çivi'yi hesap açmadan kullanabilirsin; bu durumda CV'lerin yalnızca cihazında durur.</li>
+  <li>Yapay zekâ özellikleri için hesap gerekir; bu özellikleri kullandığında ilgili içerik
+  işlenmek üzere OpenAI'ye gönderilir.</li>
+  <li>Sesli cevapların yalnızca yazıya dökülmek için işlenir; ses kaydı Çivi'de
+  <strong>hiçbir zaman saklanmaz</strong>.</li>
+  <li>Uygulamanın bu sürümü kullanım analitiği ve hata raporu <strong>toplamaz</strong>.</li>
+  <li>Reklamlar yalnızca kişiselleştirilmemiş istenir; reklam takibi izni (ATT) istemiyoruz ve
+  verini satmıyoruz.</li>
+  <li>Hesabını uygulama içinden silebilirsin; hesabına bağlı sunucu verisi silinir.</li>
+</ul>
+</div>
 
 <h2>1. Veri Sorumlusu</h2>
-<table>
+<div class="table-wrap"><table>
   <tr><th>Veri Sorumlusu</th><td>Eren Baykara</td></tr>
   <tr><th>Yerleşim</th><td>İstanbul, Türkiye</td></tr>
   <tr><th>İletişim e-postası</th><td><a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a></td></tr>
-</table>
+</table></div>
 
-<h2>2. "Önce misafir" ilkesi ve yerel veri</h2>
-<p>Çivi, hesap oluşturmadan da kullanılabilecek şekilde tasarlanmıştır ("guest-first").
-Hesap oluşturmadığınız sürece CV'leriniz ve tercihleriniz öncelikle cihazınızda yerel olarak
-tutulur. Bir hesap oluşturup oturum açtığınızda, verileriniz cihazlar arasında
-senkronize edilebilmesi için Supabase altyapısına (bkz. Madde 4) aktarılır.</p>
+<h2>2. Hesapsız Kullanım ve Cihazdaki Veri</h2>
+<p>Çivi hesap oluşturmadan kullanılabilir. Hesapsız kullanımda kariyer bilgilerin, CV'lerin,
+ilanların ve tercihlerin <strong>yalnızca cihazında</strong> tutulur ve bize ulaşmaz.
+Uygulamayı cihazından silmek bu veriyi de siler.</p>
+<p>Hesap oluşturup giriş yaptığında cihazındaki veri, cihazlar arasında senkron kalması için
+hesabına da kaydedilir (bkz. Madde 3). Yapay zekâ özellikleri, kredi satın alma ve ödüllü
+reklam yalnızca hesapla kullanılabilir.</p>
+<p><strong>Profil fotoğrafı</strong> yalnızca cihazında saklanır: sunucumuza yüklenmez, yapay
+zekâya gönderilmez. CV/PDF/DOCX dosyalarının oluşturulması ve paylaşılması cihazında yapılır.</p>
 
-<h2>3. Topladığımız Veri Kategorileri</h2>
-<table>
-  <tr><th>Kategori</th><th>Açıklama</th></tr>
+<h2>3. İşlediğimiz Veriler</h2>
+<div class="table-wrap"><table>
+  <tr><th>Kategori</th><th>İçerik</th><th>Nerede</th></tr>
   <tr>
     <td>Hesap verisi</td>
-    <td>E-posta adresi, kimlik doğrulama tanımlayıcıları, hesap oluşturma/giriş zaman damgaları.</td>
+    <td>Ad soyad, e-posta adresi, şifre (yalnızca şifreli/hash'lenmiş olarak, kimlik doğrulama
+    altyapısında), Apple veya Google ile girişte sağlayıcı kimliği ve sağlayıcının paylaştığı
+    e-posta (Apple'ın "E-postamı gizle" adresi dahil), hesap oluşturma/giriş zamanları.</td>
+    <td>Supabase</td>
   </tr>
   <tr>
-    <td>CV verisi</td>
-    <td>Oluşturduğunuz veya içe aktardığınız özgeçmiş içeriği (metin, yapılandırılmış alanlar,
-    yüklenen belge/görüntüler), CV geçmişi ve sürümleri.</td>
+    <td>Kariyer ve CV verisi</td>
+    <td>CV'lerde ve Kariyer Bilgilerim'de girdiğin her şey: ad, e-posta, telefon, şehir,
+    bağlantılar, deneyim, eğitim, beceriler, diller, sertifikalar ve benzeri; CV belgeleri ve
+    sürümleri.</td>
+    <td>Cihaz; hesapla ayrıca Supabase</td>
   </tr>
   <tr>
-    <td>İlan ve başvuru verisi</td>
-    <td>Uygulamaya eklediğiniz iş ilanı bilgileri, ilan–CV uyum analizi sonuçları ve
-    başvuru takibi için girdiğiniz notlar/durumlar.</td>
+    <td>İlanlar ve ön yazılar</td>
+    <td>Eklediğin ilan metinleri ve bilgileri, başvuru durumu/notları, ilana bağlı olarak
+    ürettiğin ve düzenlediğin <strong>ön yazılar</strong>.</td>
+    <td>Cihaz; hesapla ayrıca Supabase</td>
   </tr>
   <tr>
-    <td>Kullanım ve teşhis verisi (opsiyonel)</td>
-    <td>Yalnızca açıkça etkinleştirirseniz: uygulama içi etkileşim olayları (PostHog) ve
-    çökme/hata teşhis kayıtları (Sentry). Bkz. Madde 6.</td>
+    <td>Yapay zekâ sonuçları</td>
+    <td>CV Kontrol ve İlan Uyumu sonuçları, çeviriler, yazım önerileri.</td>
+    <td>Cihaz ve Supabase</td>
   </tr>
   <tr>
-    <td>Satın alma verisi</td>
-    <td>Uygulama içi satın alma durumu ve doğrulama bilgisi (RevenueCat üzerinden;
-    ödeme kartı bilgileri bize veya RevenueCat'e değil, doğrudan Apple/Google'a aittir).</td>
+    <td>Mülakat Provası</td>
+    <td>Mülakat için oluşturulan sorular ve CV/ilandan çıkarılan bağlam özeti, <strong>yazılı
+    cevapların</strong>, takip soruları ve mülakat raporların (puanlar ve geri bildirim).</td>
+    <td>Supabase</td>
   </tr>
   <tr>
-    <td>Reklam ile ilgili teknik veri</td>
-    <td>Google AdMob tarafından reklam sunumu için işlenen, kişiselleştirilmemiş
-    teknik tanımlayıcılar ve onay (consent) durumu. Bkz. Madde 7.</td>
+    <td>Anlat, Yazalım</td>
+    <td>Sorulara verdiğin yazılı veya yazıya dökülmüş cevaplar ve bunlardan üretilen CV taslağı.
+    Oluşturduğun CV, diğer CV'lerin gibi saklanır.</td>
+    <td>Cihaz; geçici olarak Supabase (Madde 7)</td>
   </tr>
-</table>
+  <tr>
+    <td>Ses</td>
+    <td>Yalnızca Anlat, Yazalım'da sesli cevap vermeyi seçersen: o cevabın ses kaydı.
+    <strong>Saklanmaz</strong> (Madde 5).</td>
+    <td>Yalnızca işlenir</td>
+  </tr>
+  <tr>
+    <td>İçe aktarılan dosyalar</td>
+    <td>İçe aktardığın veya analiz ettirdiğin PDF, DOCX ya da fotoğraf. Dosyanın kendisi ve
+    çıkarılan metin saklanmaz; yalnızca dosya adı, türü ve boyutu gibi teknik bilgiler ile
+    sonuç saklanır.</td>
+    <td>İşlenir; sonuç Cihaz/Supabase</td>
+  </tr>
+  <tr>
+    <td>Kredi ve satın alma verisi</td>
+    <td>Kredi bakiyesi ve hareketleri (ücretsiz, ödüllü, satın alınan), satın alınan paket,
+    işlem kimlikleri. Kart bilgilerine erişimimiz yoktur.</td>
+    <td>Supabase, RevenueCat</td>
+  </tr>
+  <tr>
+    <td>Yapay zekâ kullanım kayıtları (telemetri)</td>
+    <td>Her yapay zekâ işlemi için <strong>içerik taşımayan</strong> teknik kayıt: hangi
+    özellik, zaman, durum, kullanılan model, işlenen token sayısı, süre, ses süresi/boyutu,
+    sabit hata kodu ve kullanılan kredi. CV, ilan, cevap veya ses içeriği bu kayıtlara
+    girmez. Maliyet kontrolü, kötüye kullanımın önlenmesi, kredi iadeleri ve hizmetin
+    iyileştirilmesi için kullanılır.</td>
+    <td>Supabase</td>
+  </tr>
+  <tr>
+    <td>Reklam verisi</td>
+    <td>Google'ın reklam göstermek ve ölçmek için topladığı teknik veriler (Madde 8) ve
+    ödüllü reklamda kredinin doğrulanması için hesabının rastgele iç kimliği.</td>
+    <td>Google, Supabase</td>
+  </tr>
+</table></div>
 
-<h2>4. Kullandığımız Alt Yükleniciler ve Alt Yapı Sağlayıcılar</h2>
+<h2>4. Yapay Zekâ ile İşleme</h2>
+<p>Aşağıdaki özelliklerden birini kullandığında, yalnızca o işlem için gereken içerik
+sunucumuzdaki fonksiyonlar üzerinden <strong>OpenAI</strong> API'sine gönderilir. İstekler
+OpenAI'de sonraki kullanım için saklanmak üzere işaretlenmez (<code>store: false</code>);
+OpenAI, API verisini kendi politikası gereği kötüye kullanım denetimi için en fazla 30 gün
+tutabilir ve API verisini model eğitimi için kullanmaz. OpenAI'ye adın veya e-postan ayrıca
+kimlik olarak gönderilmez; ancak gönderilen CV içeriği bu bilgileri içerebilir.</p>
+<div class="table-wrap"><table>
+  <tr><th>Özellik</th><th>Gönderilen içerik</th></tr>
+  <tr><td>CV Kontrol</td><td>CV içeriği veya yüklediğin CV dosyası</td></tr>
+  <tr><td>İlan Uyumu ve ilana özel CV</td><td>CV içeriği ve ilan metni</td></tr>
+  <tr><td>Stüdyo yazım yardımı</td><td>Düzenlediğin bölümün metni ve ilgili bağlam</td></tr>
+  <tr><td>İngilizceye çeviri</td><td>CV içeriği</td></tr>
+  <tr><td>CV içe aktarma</td><td>Seçtiğin PDF, DOCX veya fotoğraf</td></tr>
+  <tr><td>Ön Yazı Oluştur</td><td>CV içeriği, ilan metni ve eklediğin not</td></tr>
+  <tr><td>Anlat, Yazalım</td><td>Cevapların (sesli cevaplar için ses kaydı, Madde 5)</td></tr>
+  <tr><td>Mülakat Provası</td><td>CV ve ilandan çıkarılan bağlam, sorular ve cevapların</td></tr>
+</table></div>
+<p>Yapay zekâ çıktıları yol gösterici önerilerdir; gerçek bir işverenin, İK uzmanının ya da
+başvuru takip sisteminin (ATS) değerlendirmesi değildir ve senin hakkında hukuki veya benzeri
+önemli bir etki doğuran otomatik bir karar verilmez.</p>
 
-<h3>4.1 Supabase</h3>
-<p>Kimlik doğrulama (auth), veritabanı, dosya depolama, cihazlar arası senkronizasyon ve
-sunucu tarafı fonksiyonlar (server functions) için Supabase kullanılır. Hesap oluşturduğunuzda
-hesap verisi ve CV/ilan verisi Supabase altyapısında saklanır.</p>
-
-<h3>4.2 OpenAI API</h3>
-<p>Aşağıdaki özellikler için CV ve ilan metniniz OpenAI API'sine işlenmek üzere gönderilir:</p>
+<h2>5. Ses ve Mikrofon</h2>
 <ul>
-  <li>CV analizi ve kalite değerlendirmesi</li>
-  <li>İlan–CV uyum analizi</li>
-  <li>Yapay zekâ destekli metin iyileştirme (Stüdyo)</li>
-  <li>Dil çevirisi (TR↔EN)</li>
+  <li>Mikrofon yalnızca Anlat, Yazalım'da kayıt düğmesine bastığında ve iznin varsa açılır.
+  Sesle cevap vermek isteğe bağlıdır; her soruyu yazarak da cevaplayabilirsin.</li>
+  <li>Kayıt, yazıya dökülmesi için sunucumuz üzerinden OpenAI'nin ses-metin modeline iletilir.
+  Ses sunucumuzda yalnızca istek süresince bellekte tutulur; <strong>hiçbir veritabanına,
+  dosyaya veya depolama alanına yazılmaz</strong>.</li>
+  <li>Cihazındaki geçici kayıt dosyası gönderimden hemen sonra (veya kaydı iptal ettiğinde)
+  silinir.</li>
+  <li>Saklanan tek şey, düzenleyebildiğin yazılı metindir. Sunucuda sesin yalnızca süresi ve
+  boyutu (içeriksiz telemetri) kaydedilir.</li>
+  <li>OpenAI'deki olası kısa süreli saklama Madde 4'te açıklanmıştır.</li>
+  <li>Ses; kimlik tespiti, duygu ya da kişilik analizi için kullanılmaz.</li>
 </ul>
-<p>Bu istekler sunucu tarafı fonksiyonlar üzerinden yapılır; OpenAI bu içeriği kendi
-hizmet şartları ve veri kullanım politikaları çerçevesinde işler.</p>
 
-<h3>4.3 Google AdMob ve User Messaging Platform (UMP)</h3>
-<p>Normal (banner) ve ödüllü (rewarded) reklamlar Google AdMob aracılığıyla sunulur.
-Reklam onay tercihleri Google'ın User Messaging Platform (UMP) altyapısı ile yönetilir.
-Bkz. Madde 7.</p>
+<h2>6. Hizmet Sağlayıcılar (Alt İşleyenler)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Sağlayıcı</th><th>Amaç</th></tr>
+  <tr><td>Supabase</td><td>Kimlik doğrulama, veritabanı, senkronizasyon ve sunucu
+  fonksiyonları</td></tr>
+  <tr><td>OpenAI</td><td>Yapay zekâ özellikleri ve ses-metin dönüşümü (Madde 4–5)</td></tr>
+  <tr><td>Google (AdMob, User Messaging Platform)</td><td>Reklam gösterimi, reklam onayı
+  yönetimi ve ödüllü reklam doğrulaması (Madde 8)</td></tr>
+  <tr><td>RevenueCat</td><td>Uygulama içi satın almaların doğrulanması (Madde 10)</td></tr>
+  <tr><td>Apple, Google</td><td>"Apple ile giriş" / "Google ile giriş" ve mağaza ödemeleri
+  (kendi politikaları geçerlidir)</td></tr>
+</table></div>
 
-<h3>4.4 RevenueCat</h3>
-<p>Uygulama içi satın almaların doğrulanması ve abonelik/kredi durumunun yönetimi için
-RevenueCat kullanılır. Ödeme işlemi doğrudan Apple App Store / Google Play üzerinden
-gerçekleşir; kart bilgileriniz bize veya RevenueCat'e ulaşmaz.</p>
+<h2>7. Saklama Süreleri</h2>
+<div class="table-wrap"><table>
+  <tr><th>Veri</th><th>Süre</th></tr>
+  <tr><td>Cihazdaki veri (misafir veya hesaplı)</td><td>Sen silene ya da uygulamayı
+  kaldırana kadar. Hesabını sildiğinde o hesaba ait cihaz verisi de temizlenir.</td></tr>
+  <tr><td>Hesap, kariyer/CV, ilan ve ön yazı verisi; yapay zekâ sonuçları; mülakat
+  oturumları, cevapları ve raporları; kredi hareketleri; yapay zekâ kullanım kayıtları;
+  ödüllü reklam kayıtları</td><td>Hesabın açık olduğu sürece. Hesabını sildiğinde bu kayıtların
+  tamamı sunucudan kalıcı olarak silinir.</td></tr>
+  <tr><td>Ön Yazı Oluştur sonucunun sunucu kopyası</td><td>Yalnızca bağlantı kesilirse aynı
+  isteğin ikinci kez ücretlendirilmeden sonuçlanabilmesi için en fazla 30 dakika; süresi dolan
+  içerik bir daha kullanılmaz ve sistemin sonraki işleminde silinir. Kalıcı kopya ilan kaydında
+  durur.</td></tr>
+  <tr><td>Anlat, Yazalım döküm ve taslağının sunucu kopyası</td><td>Aynı amaçla en fazla 24
+  saat; süresi dolan içerik bir daha kullanılmaz ve sistemin sonraki işleminde silinir.</td></tr>
+  <tr><td>Ses kaydı</td><td>Çivi tarafından hiç saklanmaz.</td></tr>
+  <tr><td>Yüklenen/içe aktarılan dosyalar</td><td>Dosyanın kendisi ve çıkarılan metin
+  saklanmaz; yalnızca istek süresince işlenir.</td></tr>
+  <tr><td>OpenAI'ye gönderilen içerik</td><td>OpenAI'nin politikasına göre kötüye kullanım
+  denetimi için en fazla 30 gün.</td></tr>
+  <tr><td>RevenueCat müşteri kaydı</td><td>Hesap silindiğinde silinmesi istenir; Apple/Google'ın
+  kendi satın alma kayıtları onların politikalarına tabidir.</td></tr>
+</table></div>
 
-<h3>4.5 PostHog (opsiyonel, varsayılan KAPALI)</h3>
-<p>Ürün kullanım analitiği için PostHog kullanılabilir. Bu özellik <strong>varsayılan olarak
-kapalıdır</strong> ve yalnızca siz açıkça etkinleştirirseniz devreye girer.</p>
-
-<h3>4.6 Sentry (opsiyonel, varsayılan KAPALI)</h3>
-<p>Uygulama hatalarının teşhisi için Sentry kullanılabilir. Bu özellik <strong>varsayılan
-olarak kapalıdır</strong> ve yalnızca siz açıkça etkinleştirirseniz devreye girer.</p>
-
-<h2>5. İşleme Amaçları ve Hukuki Sebepler</h2>
-<table>
-  <tr><th>Amaç</th><th>Hukuki sebep (KVKK/GDPR)</th></tr>
-  <tr><td>Hesabın oluşturulması ve sürdürülmesi, cihazlar arası senkronizasyon</td>
-      <td>Sözleşmenin ifası</td></tr>
-  <tr><td>CV analizi, ilan uyumu, AI metin iyileştirme, çeviri</td>
-      <td>Sözleşmenin ifası / açık talebiniz üzerine</td></tr>
-  <tr><td>Uygulama içi satın almaların doğrulanması</td>
-      <td>Sözleşmenin ifası</td></tr>
-  <tr><td>Reklam gösterimi</td>
-      <td>Açık rıza (UMP üzerinden alınan onay); rıza olmadan kişiselleştirilmemiş
-      reklam dahi UMP kapısı geçilmeden istenmez</td></tr>
-  <tr><td>Kullanım analitiği (PostHog)</td>
-      <td>Açık rıza — yalnızca etkinleştirirseniz</td></tr>
-  <tr><td>Hata/çökme teşhisi (Sentry)</td>
-      <td>Açık rıza — yalnızca etkinleştirirseniz</td></tr>
-</table>
-
-<h2>6. Analitik ve Teşhis — Varsayılan Kapalı</h2>
-<p>PostHog (kullanım analitiği) ve Sentry (hata teşhisi) entegrasyonları uygulamada
-mevcuttur ancak <strong>varsayılan olarak devre dışıdır</strong>. Bu özellikleri yalnızca
-siz uygulama ayarlarından açıkça etkinleştirirseniz veri toplanmaya başlar. Dilediğiniz
-zaman tekrar kapatabilirsiniz.</p>
-
-<h2>7. Reklamlar</h2>
-<p>Çivi, normal (banner) ve ödüllü (rewarded) reklamlar için Google AdMob kullanır.</p>
+<h2>8. Reklamlar</h2>
 <ul>
-  <li><strong>Kişiselleştirilmemiş reklamlar:</strong> Normal reklamlar yalnızca
-  kişiselleştirilmemiş reklam (non-personalized ads) olarak talep edilir.</li>
-  <li><strong>ATT (App Tracking Transparency) akışı yoktur:</strong> Uygulama, iOS'un
-  izleme izni istemi olan ATT akışını kullanmaz ve reklamverenler arası izleme için
-  IDFA talep etmez.</li>
-  <li><strong>Onay yönetimi (UMP):</strong> Google'ın User Messaging Platform'u,
-  bölgenize göre gerekli onay/gizlilik mesajlarını yönetir. Reklam, ilgili onay
-  çözümlenmeden ve gerekli ise onay formu gösterilmeden istenmez.</li>
-  <li><strong>Reklam tercihlerinizi değiştirme:</strong> Uygulama içinde
-  <code>Profil → Gizlilik ve Veri → Reklam tercihleri</code> yolunu izleyerek,
-  bölgenizde UMP tarafından gerekli görüldüğü durumlarda reklam gizlilik
-  tercihlerinizi güncelleyebilirsiniz. Bu satır yalnızca UMP bunu gerektiriyorsa
-  görünür.</li>
+  <li><strong>Tam ekran reklam:</strong> Stüdyo'dan dışa aktarmayı tamamladığında veya yeni bir
+  ilan kaydettiğinde zaman zaman kapatılabilir bir tam ekran reklam gösterilebilir. Uygulamanın
+  ilk dakikasında, sık aralıklarla ve kredi satın almış kullanıcılara gösterilmez. Bu reklamlar
+  yalnızca <strong>kişiselleştirilmemiş reklam</strong> olarak istenir.</li>
+  <li><strong>Ödüllü reklam:</strong> Kredi Merkezi'ndeki "Reklam izle" tamamen isteğe bağlıdır ve
+  bu reklamlar da yalnızca <strong>kişiselleştirilmemiş reklam</strong> olarak istenir. Ödülün
+  doğrulanması için Google'a yalnızca hesabının rastgele iç kimliği gönderilir; kredi, Google'ın
+  imzalı doğrulaması sunucumuza ulaştığında yazılır.</li>
+  <li><strong>Onay (UMP):</strong> Bölgen gerektiriyorsa Google'ın onay formu ilk reklamdan önce
+  gösterilir; onay çözülmeden reklam istenmez. Tercihlerini
+  <code>Profil → Gizlilik ve Veriler → Reklam tercihleri</code> yolundan değiştirebilirsin
+  (satır, bölgen gerektirdiğinde görünür).</li>
+  <li><strong>Takip yok:</strong> Uygulama App Tracking Transparency (ATT) izni istemez ve
+  reklam kimliğine (IDFA) erişmez. Google, reklamı göstermek ve ölçmek için IP adresi
+  (yaklaşık konum), cihaz/uygulama düzeyinde teknik tanımlayıcılar, reklam etkileşimleri ve
+  teşhis verisi gibi teknik veriler işleyebilir; bu işleme Google'ın politikasına tabidir:
+  <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</li>
 </ul>
 
-<h2>8. Verilerinizi Nasıl Yönetirsiniz</h2>
-<h3>8.1 Hesabınızı Silme</h3>
-<p>Uygulama içinde <code>Profil → Hesabımı sil</code> yolunu izleyerek hesabınızı ve
-buna bağlı verileri silme talebinde bulunabilirsiniz.</p>
+<h2>9. Kullanım Analitiği ve Hata Raporları</h2>
+<p>Uygulamanın bu sürümü üçüncü taraf kullanım analitiği ya da hata/çökme raporlama hizmeti
+<strong>kullanmaz</strong>. İleride eklenirse, bu politika önceden güncellenir; bu özellikler
+isteğe bağlı, <strong>varsayılan olarak kapalı</strong> olur ve <code>Profil → Gizlilik ve
+Veriler</code> ekranından açmadığın sürece hiçbir veri gönderilmez. Kendi sunucumuzdaki içeriksiz
+yapay zekâ kullanım kayıtları Madde 3'te açıklanmıştır.</p>
 
-<h3>8.2 Misafir Modunda Veri</h3>
-<p>Hesap oluşturmadıysanız verileriniz yalnızca cihazınızda yerel olarak tutulur;
-uygulamayı cihazınızdan kaldırmak bu veriyi de siler.</p>
+<h2>10. Satın Almalar ve Krediler</h2>
+<p>Çivi'de abonelik yoktur; yapay zekâ özellikleri kredi ile kullanılır. Krediler uygulama
+içi satın alma ile (tüketilebilir paketler) alınır, ödeme Apple App Store veya Google Play
+üzerinden yapılır ve kart bilgilerin bize veya RevenueCat'e ulaşmaz. RevenueCat'e kimlik olarak
+yalnızca hesabının rastgele iç kimliği gönderilir. Kredi bakiyenin esas kaynağı kendi
+sunucumuzdur.</p>
 
-<h2>9. Uluslararası Veri Aktarımı</h2>
-<p>Kullandığımız alt yüklenicilerin (Supabase, OpenAI, Google AdMob/UMP, RevenueCat,
-PostHog, Sentry) altyapısı Türkiye dışındaki sunucularda barınabilir. Bu durumlarda
-veriler, ilgili sağlayıcının sözleşmesel ve teknik güvenlik önlemleri (standart
-sözleşme hükümleri dahil) çerçevesinde uluslararası aktarıma tabi tutulabilir.</p>
+<h2>11. İşleme Amaçları ve Hukuki Sebepler (KVKK m.5 / GDPR m.6)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Amaç</th><th>Hukuki sebep</th></tr>
+  <tr><td>Hesap, senkronizasyon, CV/ilan/ön yazı hizmetleri</td><td>Sözleşmenin kurulması ve
+  ifası</td></tr>
+  <tr><td>Yapay zekâ özellikleri ve ses-metin dönüşümü</td><td>Sözleşmenin ifası (senin
+  talebinle)</td></tr>
+  <tr><td>Satın almaların doğrulanması, kredi hesabı</td><td>Sözleşmenin ifası; hukuki
+  yükümlülük</td></tr>
+  <tr><td>Kullanım kayıtları: maliyet kontrolü, kötüye kullanımın önlenmesi, güvenlik</td><td>Meşru
+  menfaat</td></tr>
+  <tr><td>Reklam gösterimi</td><td>Gerektiği bölgelerde açık rıza (UMP); diğer durumlarda meşru
+  menfaat</td></tr>
+</table></div>
 
-<h2>10. Saklama Süresi</h2>
-<p>Hesap ve CV verileri, hesabınız aktif olduğu sürece saklanır. Hesabınızı sildiğinizde
-ilişkili veriler, yasal saklama yükümlülüklerimiz dışında, makul bir süre içinde
-sistemlerimizden kaldırılır. Yerel (misafir modu) veriler yalnızca cihazınızda
-tutulur ve bizim tarafımızdan saklanmaz.</p>
+<h2>12. Yurt Dışına Aktarım</h2>
+<p>Hizmet sağlayıcılarımızın (Supabase, OpenAI, Google, RevenueCat) sunucuları
+Türkiye dışında bulunabilir. Verilerin, bu hizmetlerin sunulması için ve ilgili mevzuatta
+öngörülen güvenceler (standart sözleşmeler dahil) çerçevesinde yurt dışına aktarılabilir.</p>
 
-<h2>11. KVKK Kapsamındaki Haklarınız (Türkiye)</h2>
-<p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca:</p>
-<ul>
-  <li>Kişisel verinizin işlenip işlenmediğini öğrenme,</li>
-  <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
-  <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
-  <li>Yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme,</li>
-  <li>Eksik/yanlış işlenmişse düzeltilmesini isteme,</li>
-  <li>Kanun'da öngörülen şartlar çerçevesinde silinmesini/yok edilmesini isteme,</li>
-  <li>Düzeltme/silme işlemlerinin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
-  <li>Otomatik işleme dayalı aleyhe bir sonuca itiraz etme,</li>
-  <li>Zarara uğramanız hâlinde tazminat talep etme</li>
-</ul>
-<p>haklarına sahipsiniz. Bu haklarınızı kullanmak için
-<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a> adresinden bize
-ulaşabilirsiniz.</p>
+<h2>13. Güvenlik</h2>
+<p>Veriler aktarım sırasında şifrelenir (HTTPS/TLS). Sunucudaki her kayıt satır düzeyinde
+erişim kurallarıyla yalnızca sahibine açıktır. Yapay zekâ ve ödeme anahtarları yalnızca
+sunucuda tutulur, uygulamaya gömülmez.</p>
 
-<h2>12. GDPR Kapsamındaki Haklarınız (AB/EEA Kullanıcıları)</h2>
-<p>Avrupa Birliği/AEA'da bulunuyorsanız, Genel Veri Koruma Tüzüğü (GDPR) uyarınca
-erişim, düzeltme, silme, işlemeyi kısıtlama, veri taşınabilirliği ve itiraz
-haklarına sahipsiniz. Ayrıca rızaya dayalı işlemler için rızanızı dilediğiniz
-zaman geri çekebilirsiniz. Talepleriniz için
-<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a> adresinden bize
-ulaşabilir; ayrıca bulunduğunuz ülkedeki yetkili veri koruma otoritesine
-şikâyette bulunma hakkınız saklıdır.</p>
+<h2>14. Haklarını Kullanma ve Hesap Silme</h2>
+<p><strong>Hesap silme:</strong> <code>Profil → Hesabımı sil</code> yolundan hesabını silebilirsin.
+Hesabın ve ona bağlı tüm sunucu kayıtları (Madde 7) kalıcı olarak silinir, cihazdaki hesap
+verisi temizlenir ve RevenueCat müşteri kaydının silinmesi istenir. Hesabın Apple ile giriş
+kullanıyorsa, silme sırasında Apple ile doğrulaman istenir ve Çivi'nin Apple hesabına verilmiş
+yetkisi Apple'da iptal edilir. Uygulamaya erişemiyorsan
+<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a> adresine kayıtlı e-posta adresinden
+yazarak da silme talep edebilirsin.</p>
+<p><strong>KVKK (Türkiye):</strong> 6698 sayılı Kanun'un 11. maddesi uyarınca; verinin işlenip
+işlenmediğini öğrenme, bilgi talep etme, işleme amacını ve amaca uygun kullanılıp
+kullanılmadığını öğrenme, aktarıldığı üçüncü kişileri bilme, düzeltme, silme/yok etme,
+bu işlemlerin aktarılan üçüncü kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle
+analiz edilmesi sonucu aleyhine bir sonuca itiraz etme ve zararın giderilmesini talep etme
+haklarına sahipsin.</p>
+<p><strong>GDPR (AB/AEA):</strong> Erişim, düzeltme, silme, işlemeyi kısıtlama, veri
+taşınabilirliği ve itiraz haklarına sahipsin; rızaya dayalı işlemlerde rızanı dilediğin an geri
+çekebilirsin. Bulunduğun ülkedeki veri koruma otoritesine şikâyet hakkın saklıdır.</p>
+<p>Taleplerin için: <a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a>. Talepleri en
+geç 30 gün içinde yanıtlarız.</p>
 
-<h2>13. Çocukların Gizliliği</h2>
-<p>Çivi, iş arama ve kariyer amaçlı bir araç olup çocuklara yönelik değildir ve
-bilerek 13 yaşın altındaki (veya bulunduğunuz bölgedeki geçerli asgari yaşın
-altındaki) kişilerden veri toplamaz.</p>
+<h2>15. Çocukların Gizliliği</h2>
+<p>Çivi, iş arama ve kariyer amaçlı bir araçtır; çocuklara yönelik değildir ve bilerek 13
+yaşın (veya bulunduğun bölgedeki geçerli asgari yaşın) altındaki kişilerden veri toplamaz.</p>
 
-<h2>14. Politika Değişiklikleri</h2>
-<p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Önemli değişikliklerde
-uygulama içi bilgilendirme yapılabilir. Güncel sürüm her zaman bu sayfada
-yayında olacaktır.</p>
+<h2>16. Değişiklikler</h2>
+<p>Bu politika güncellenebilir; güncel sürüm her zaman bu sayfada yayındadır ve en üstteki
+tarih değişir. Önemli değişiklikleri uygulama içinde duyurabiliriz.</p>
 
-<h2>15. İletişim</h2>
-<p>Gizlilik ile ilgili tüm sorularınız için:
-<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a></p>
+<h2>17. İletişim</h2>
+<p><a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a></p>
 
 </div>
 
@@ -253,194 +344,294 @@ yayında olacaktır.</p>
 <div id="en" class="lang-block">
 
 <h1>Çivi — Privacy Policy</h1>
-<p class="updated">Last updated: September 16, 2026</p>
+<p class="updated">Last updated: September 30, 2026</p>
 
-<p>This Privacy Policy explains how the <strong>Çivi</strong> mobile application
-("App", "Çivi") processes personal data. The data controller is identified below.</p>
+<p>This Privacy Policy explains how the <strong>Çivi</strong> mobile application ("App",
+"Çivi") processes personal data. The Turkish version is the governing text; this English
+version is provided for convenience.</p>
+
+<div class="summary">
+<p><strong>In short:</strong></p>
+<ul>
+  <li>You can use Çivi without an account; your CVs then stay only on your device.</li>
+  <li>AI features require an account; when you use them, the relevant content is sent to
+  OpenAI for processing.</li>
+  <li>Voice answers are processed only to be transcribed; Çivi <strong>never stores</strong>
+  audio recordings.</li>
+  <li>This version of the App <strong>does not collect</strong> usage analytics or error
+  reports.</li>
+  <li>Ads are requested as non-personalized only; we do not ask for tracking permission (ATT) and
+  we do not sell your data.</li>
+  <li>You can delete your account in the app; server data linked to it is deleted.</li>
+</ul>
+</div>
 
 <h2>1. Data Controller</h2>
-<table>
+<div class="table-wrap"><table>
   <tr><th>Data Controller</th><td>Eren Baykara</td></tr>
   <tr><th>Location</th><td>Istanbul, Turkey</td></tr>
   <tr><th>Contact email</th><td><a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a></td></tr>
-</table>
+</table></div>
 
-<h2>2. Guest-First Principle and Local Data</h2>
-<p>Çivi is designed to be usable without creating an account ("guest-first"). Until you
-create an account, your CVs and preferences are kept primarily as local data on your
-device. When you create an account and sign in, your data is transferred to Supabase
-(see Section 4) so it can sync across devices.</p>
+<h2>2. Using Çivi Without an Account; Data on Your Device</h2>
+<p>Çivi can be used without an account. In that case your career information, CVs, job
+postings and preferences are stored <strong>only on your device</strong> and never reach us.
+Deleting the app also deletes this data.</p>
+<p>When you create an account and sign in, your device data is also saved to your account so it
+stays in sync across devices (see Section 3). AI features, credit purchases and rewarded ads
+require an account.</p>
+<p>Your <strong>profile photo</strong> is stored only on your device: it is not uploaded to our
+servers and never sent to AI. CV, PDF and DOCX files are generated and shared on your
+device.</p>
 
-<h2>3. Categories of Data We Collect</h2>
-<table>
-  <tr><th>Category</th><th>Description</th></tr>
+<h2>3. Data We Process</h2>
+<div class="table-wrap"><table>
+  <tr><th>Category</th><th>Content</th><th>Where</th></tr>
   <tr>
     <td>Account data</td>
-    <td>Email address, authentication identifiers, account creation/login timestamps.</td>
+    <td>Full name, email address, password (hashed, within the authentication service only),
+    provider identifier and the email shared by Apple or Google when you use Sign in with
+    Apple/Google (including Apple's "Hide My Email" relay address), sign-up/sign-in times.</td>
+    <td>Supabase</td>
   </tr>
   <tr>
-    <td>CV data</td>
-    <td>Resume content you create or import (text, structured fields, uploaded
-    documents/images), CV history and versions.</td>
+    <td>Career and CV data</td>
+    <td>Everything you enter in your CVs and Career Profile: name, email, phone, city, links,
+    experience, education, skills, languages, certificates and similar; CV documents and
+    versions.</td>
+    <td>Device; with an account also Supabase</td>
   </tr>
   <tr>
-    <td>Job posting and application data</td>
-    <td>Job posting details you add to the app, job-to-CV match analysis results, and
-    any notes/statuses you enter to track applications.</td>
+    <td>Job postings and cover letters</td>
+    <td>Job posting text and details you add, application status/notes, and the
+    <strong>cover letters</strong> you generate and edit for a posting.</td>
+    <td>Device; with an account also Supabase</td>
   </tr>
   <tr>
-    <td>Usage and diagnostic data (optional)</td>
-    <td>Only if you explicitly enable it: in-app interaction events (PostHog) and
-    crash/error diagnostic logs (Sentry). See Section 6.</td>
+    <td>AI results</td>
+    <td>CV Check and Job Match results, translations, writing suggestions.</td>
+    <td>Device and Supabase</td>
   </tr>
   <tr>
-    <td>Purchase data</td>
-    <td>In-app purchase status and verification data (via RevenueCat; payment card
-    details are held by Apple/Google directly, never by us or RevenueCat).</td>
+    <td>Interview Practice</td>
+    <td>Generated interview questions and a context summary derived from your CV and the job
+    posting, your <strong>written answers</strong>, follow-up questions and your interview
+    reports (scores and feedback).</td>
+    <td>Supabase</td>
   </tr>
   <tr>
-    <td>Advertising-related technical data</td>
-    <td>Non-personalized technical identifiers processed by Google AdMob for ad
-    delivery, and your consent status. See Section 7.</td>
+    <td>Guided CV ("Anlat, Yazalım")</td>
+    <td>Your typed or transcribed answers to the questions and the CV draft generated from
+    them. The CV you create is stored like your other CVs.</td>
+    <td>Device; temporarily Supabase (Section 7)</td>
   </tr>
-</table>
+  <tr>
+    <td>Audio</td>
+    <td>Only if you choose to answer by voice in Guided CV: the recording of that answer.
+    <strong>Not stored</strong> (Section 5).</td>
+    <td>Processed only</td>
+  </tr>
+  <tr>
+    <td>Imported files</td>
+    <td>PDF, DOCX or photo you import or have analyzed. The file itself and the extracted text
+    are not stored; only technical details such as file name, type and size, and the result,
+    are stored.</td>
+    <td>Processed; result on Device/Supabase</td>
+  </tr>
+  <tr>
+    <td>Credit and purchase data</td>
+    <td>Credit balance and movements (free, rewarded, purchased), purchased package, transaction
+    identifiers. We have no access to card details.</td>
+    <td>Supabase, RevenueCat</td>
+  </tr>
+  <tr>
+    <td>AI usage records (telemetry)</td>
+    <td>For each AI operation, a <strong>content-free</strong> technical record: which feature,
+    time, status, model used, number of tokens processed, duration, audio duration/size, a fixed
+    error code and credits used. No CV, posting, answer or audio content is stored in these
+    records. Used for cost control, abuse prevention, credit refunds and service
+    improvement.</td>
+    <td>Supabase</td>
+  </tr>
+  <tr>
+    <td>Advertising data</td>
+    <td>Technical data Google collects to serve and measure ads (Section 8), and your account's
+    random internal ID to verify rewarded-ad credits.</td>
+    <td>Google, Supabase</td>
+  </tr>
+</table></div>
 
-<h2>4. Subprocessors and Infrastructure Providers</h2>
+<h2>4. AI Processing</h2>
+<p>When you use one of the features below, only the content needed for that operation is sent
+via our server functions to the <strong>OpenAI</strong> API. Requests are not flagged for
+storage at OpenAI (<code>store: false</code>); under its own policy OpenAI may retain API data
+for up to 30 days for abuse monitoring and does not use API data to train its models. Your name
+or email is not sent to OpenAI as an identifier, although the CV content sent may contain
+them.</p>
+<div class="table-wrap"><table>
+  <tr><th>Feature</th><th>Content sent</th></tr>
+  <tr><td>CV Check</td><td>CV content or the CV file you upload</td></tr>
+  <tr><td>Job Match and job-tailored CV</td><td>CV content and job posting text</td></tr>
+  <tr><td>Studio writing assistant</td><td>The text of the section you edit and related
+  context</td></tr>
+  <tr><td>Translation to English</td><td>CV content</td></tr>
+  <tr><td>CV import</td><td>The PDF, DOCX or photo you select</td></tr>
+  <tr><td>Cover Letter</td><td>CV content, job posting text and your optional note</td></tr>
+  <tr><td>Guided CV</td><td>Your answers (for voice answers, the audio recording, see
+  Section 5)</td></tr>
+  <tr><td>Interview Practice</td><td>Context derived from your CV and the posting, questions and
+  your answers</td></tr>
+</table></div>
+<p>AI outputs are guidance only; they are not the assessment of a real employer, recruiter or
+applicant tracking system (ATS), and no automated decision with legal or similarly significant
+effects is made about you.</p>
 
-<h3>4.1 Supabase</h3>
-<p>Used for authentication, database, file storage, cross-device sync, and server-side
-functions. Once you create an account, your account and CV/job data is stored on
-Supabase infrastructure.</p>
-
-<h3>4.2 OpenAI API</h3>
-<p>For the following features, your CV and job posting text is sent to the OpenAI API
-for processing:</p>
+<h2>5. Audio and Microphone</h2>
 <ul>
-  <li>CV analysis and quality assessment</li>
-  <li>Job-to-CV match analysis</li>
-  <li>AI-assisted text improvement (Studio)</li>
-  <li>Language translation (TR↔EN)</li>
+  <li>The microphone is used only when you tap record in Guided CV and have granted permission.
+  Answering by voice is optional; every question can be answered by typing.</li>
+  <li>The recording is sent through our server to OpenAI's speech-to-text model for
+  transcription. On our server audio exists only in memory for the duration of the request; it
+  is <strong>never written to any database, file or storage</strong>.</li>
+  <li>The temporary recording file on your device is deleted right after it is sent (or when you
+  cancel the recording).</li>
+  <li>Only the editable text transcript is kept. Our server records only the audio's duration and
+  size (content-free telemetry).</li>
+  <li>Possible short-term retention at OpenAI is described in Section 4.</li>
+  <li>Audio is never used for identification, emotion or personality analysis.</li>
 </ul>
-<p>These requests are made via server-side functions; OpenAI processes this content
-under its own terms of service and data usage policies.</p>
 
-<h3>4.3 Google AdMob and User Messaging Platform (UMP)</h3>
-<p>Normal (banner) and rewarded ads are served via Google AdMob. Advertising consent
-preferences are managed through Google's User Messaging Platform (UMP). See Section 7.</p>
+<h2>6. Service Providers (Subprocessors)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Provider</th><th>Purpose</th></tr>
+  <tr><td>Supabase</td><td>Authentication, database, sync and server functions</td></tr>
+  <tr><td>OpenAI</td><td>AI features and speech-to-text (Sections 4–5)</td></tr>
+  <tr><td>Google (AdMob, User Messaging Platform)</td><td>Ad delivery, ad consent management and
+  rewarded-ad verification (Section 8)</td></tr>
+  <tr><td>RevenueCat</td><td>In-app purchase validation (Section 10)</td></tr>
+  <tr><td>Apple, Google</td><td>Sign in with Apple / Google and store payments (their own
+  policies apply)</td></tr>
+</table></div>
 
-<h3>4.4 RevenueCat</h3>
-<p>Used to verify in-app purchases and manage subscription/credit status. Payment is
-processed directly through the Apple App Store / Google Play; your payment card
-details never reach us or RevenueCat.</p>
+<h2>7. Retention</h2>
+<div class="table-wrap"><table>
+  <tr><th>Data</th><th>Period</th></tr>
+  <tr><td>Data on your device (guest or signed in)</td><td>Until you delete it or remove the app.
+  Deleting your account also clears that account's data from the device.</td></tr>
+  <tr><td>Account, career/CV, job posting and cover letter data; AI results; interview sessions,
+  answers and reports; credit movements; AI usage records; rewarded-ad records</td><td>While your
+  account exists. When you delete your account, all of these records are permanently deleted from
+  our servers.</td></tr>
+  <tr><td>Server copy of a Cover Letter result</td><td>Up to 30 minutes, only so the same request
+  can complete without a second charge if the connection drops; expired content is never used
+  again and is deleted on the system's next operation. The permanent copy lives in the job
+  posting record.</td></tr>
+  <tr><td>Server copy of a Guided CV transcript and draft</td><td>Up to 24 hours for the same
+  purpose; expired content is never used again and is deleted on the system's next
+  operation.</td></tr>
+  <tr><td>Audio recordings</td><td>Never stored by Çivi.</td></tr>
+  <tr><td>Uploaded/imported files</td><td>The file and the extracted text are not stored; they are
+  processed only for the duration of the request.</td></tr>
+  <tr><td>Content sent to OpenAI</td><td>Up to 30 days for abuse monitoring, per OpenAI's
+  policy.</td></tr>
+  <tr><td>RevenueCat customer record</td><td>Deletion is requested when you delete your account;
+  Apple/Google's own purchase records are subject to their policies.</td></tr>
+</table></div>
 
-<h3>4.5 PostHog (optional, default OFF)</h3>
-<p>May be used for product usage analytics. This feature is <strong>off by default</strong>
-and only becomes active if you explicitly enable it.</p>
-
-<h3>4.6 Sentry (optional, default OFF)</h3>
-<p>May be used to diagnose application errors. This feature is <strong>off by
-default</strong> and only becomes active if you explicitly enable it.</p>
-
-<h2>5. Purposes and Legal Bases</h2>
-<table>
-  <tr><th>Purpose</th><th>Legal basis (GDPR/KVKK)</th></tr>
-  <tr><td>Creating and maintaining your account, cross-device sync</td>
-      <td>Performance of a contract</td></tr>
-  <tr><td>CV analysis, job matching, AI text improvement, translation</td>
-      <td>Performance of a contract / your explicit request</td></tr>
-  <tr><td>Verifying in-app purchases</td>
-      <td>Performance of a contract</td></tr>
-  <tr><td>Ad delivery</td>
-      <td>Consent (obtained via UMP); even non-personalized ads are not requested
-      before the UMP consent gate is resolved</td></tr>
-  <tr><td>Usage analytics (PostHog)</td>
-      <td>Consent — only if you enable it</td></tr>
-  <tr><td>Error/crash diagnostics (Sentry)</td>
-      <td>Consent — only if you enable it</td></tr>
-</table>
-
-<h2>6. Analytics and Diagnostics — Off by Default</h2>
-<p>PostHog (usage analytics) and Sentry (error diagnostics) integrations exist in the
-app but are <strong>disabled by default</strong>. Data collection only begins if you
-explicitly enable these features in app settings. You can turn them off again at any
-time.</p>
-
-<h2>7. Advertising</h2>
-<p>Çivi uses Google AdMob for normal (banner) and rewarded ads.</p>
+<h2>8. Advertising</h2>
 <ul>
-  <li><strong>Non-personalized ads:</strong> Normal ads are requested exclusively as
-  non-personalized ads.</li>
-  <li><strong>No ATT (App Tracking Transparency) flow:</strong> The app does not use
-  iOS's ATT tracking permission prompt and does not request IDFA for cross-advertiser
-  tracking.</li>
-  <li><strong>Consent management (UMP):</strong> Google's User Messaging Platform
-  manages the consent/privacy messaging required for your region. Ads are not
-  requested until the relevant consent is resolved and, where required, a consent
-  form has been shown.</li>
-  <li><strong>Changing your ad preferences:</strong> In the app, go to
-  <code>Profile → Privacy & Data → Ad preferences</code> to update your advertising
-  privacy preferences where UMP determines this is required for your region. This
-  row is only shown when UMP requires it.</li>
+  <li><strong>Full-screen ads:</strong> After you finish exporting from Studio or save a new job
+  posting, a closable full-screen ad may occasionally be shown. It is not shown during the app's
+  first minute, not at short intervals, and never to users who have purchased credits. These ads
+  are requested as <strong>non-personalized ads</strong> only.</li>
+  <li><strong>Rewarded ads:</strong> "Watch an ad" in the Credit Center is entirely optional, and
+  these ads are also requested as <strong>non-personalized ads</strong> only. Only your account's
+  random internal ID is sent to Google to verify the reward; credit is granted when Google's signed
+  verification reaches our server.</li>
+  <li><strong>Consent (UMP):</strong> Where required in your region, Google's consent form is
+  shown before the first ad; no ad is requested until consent is resolved. You can change your
+  choices at <code>Profile → Privacy &amp; Data → Ad preferences</code> (the row appears when
+  your region requires it).</li>
+  <li><strong>No tracking:</strong> The App does not request App Tracking Transparency (ATT)
+  permission and does not access the advertising identifier (IDFA). To serve and measure ads,
+  Google may process technical data such as IP address (approximate location), device/app-scoped
+  technical identifiers, ad interactions and diagnostics, subject to Google's policy:
+  <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</li>
 </ul>
 
-<h2>8. Managing Your Data</h2>
-<h3>8.1 Deleting Your Account</h3>
-<p>In the app, go to <code>Profile → Delete my account</code> to request deletion of
-your account and associated data.</p>
+<h2>9. Usage Analytics and Error Reports</h2>
+<p>This version of the App does <strong>not</strong> use any third-party usage analytics or
+error/crash reporting service. If one is added in the future, this policy will be updated first;
+such features will be optional and <strong>off by default</strong>, and no data will be sent unless
+you turn them on in <code>Profile → Privacy &amp; Data</code>. Our own content-free AI usage records
+are described in Section 3.</p>
 
-<h3>8.2 Data in Guest Mode</h3>
-<p>If you have not created an account, your data is stored only locally on your
-device; removing the app from your device also deletes this data.</p>
+<h2>10. Purchases and Credits</h2>
+<p>Çivi has no subscriptions; AI features are used with credits. Credits are bought as in-app
+purchases (consumable packs); payment is handled by the Apple App Store or Google Play and your
+card details never reach us or RevenueCat. Only your account's random internal ID is sent to
+RevenueCat as an identifier. Our own server is the source of truth for your credit balance.</p>
 
-<h2>9. International Data Transfers</h2>
-<p>The infrastructure of our subprocessors (Supabase, OpenAI, Google AdMob/UMP,
-RevenueCat, PostHog, Sentry) may be hosted on servers outside Turkey. In such cases,
-data may be subject to international transfer under the relevant provider's
-contractual and technical safeguards (including standard contractual clauses).</p>
+<h2>11. Purposes and Legal Bases (GDPR Art. 6 / KVKK Art. 5)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Purpose</th><th>Legal basis</th></tr>
+  <tr><td>Account, sync, CV/job posting/cover letter services</td><td>Performance of a
+  contract</td></tr>
+  <tr><td>AI features and speech-to-text</td><td>Performance of a contract (at your
+  request)</td></tr>
+  <tr><td>Purchase validation, credit account</td><td>Performance of a contract; legal
+  obligation</td></tr>
+  <tr><td>Usage records: cost control, abuse prevention, security</td><td>Legitimate
+  interests</td></tr>
+  <tr><td>Ad delivery</td><td>Consent where required (UMP); otherwise legitimate
+  interests</td></tr>
+</table></div>
 
-<h2>10. Data Retention</h2>
-<p>Account and CV data is retained for as long as your account remains active. When
-you delete your account, associated data is removed from our systems within a
-reasonable period, except where we are subject to a legal retention obligation.
-Local (guest-mode) data is stored only on your device and is not retained by us.</p>
+<h2>12. International Transfers</h2>
+<p>Our service providers (Supabase, OpenAI, Google, RevenueCat) may operate
+servers outside Turkey. Your data may be transferred abroad to provide these services, subject
+to the safeguards required by applicable law (including standard contractual clauses).</p>
 
-<h2>11. Your Rights Under GDPR (EU/EEA Users)</h2>
-<p>If you are located in the European Union/EEA, under the General Data Protection
-Regulation (GDPR) you have the right to access, rectify, erase, restrict processing,
-port your data, and object to processing. Where processing is based on consent, you
-may withdraw that consent at any time. To exercise these rights, contact us at
-<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a>; you also retain the right
-to lodge a complaint with your local data protection authority.</p>
+<h2>13. Security</h2>
+<p>Data is encrypted in transit (HTTPS/TLS). Every server record is restricted to its owner by
+row-level access rules. AI and payment keys are kept only on the server and are never embedded
+in the App.</p>
 
-<h2>12. Your Rights Under KVKK (Turkey)</h2>
-<p>Under Turkish Law No. 6698 on the Protection of Personal Data ("KVKK"), you have
-the right to: learn whether your personal data is being processed; request
-information about such processing; learn the purpose of processing and whether it is
-used accordingly; know the third parties to whom your data is transferred
-domestically or abroad; request correction of incomplete/inaccurate data; request
-erasure/destruction under the conditions set out in the law; request that corrections
-or erasure be notified to third parties to whom data was transferred; object to a
-result that arises solely from automated processing to your detriment; and claim
-compensation for damages. To exercise these rights, contact us at
-<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a>.</p>
+<h2>14. Your Rights and Account Deletion</h2>
+<p><strong>Account deletion:</strong> Go to <code>Profile → Delete my account</code>. Your account
+and all server records linked to it (Section 7) are permanently deleted, account data on the
+device is cleared and deletion of the RevenueCat customer record is requested. If your account
+uses Sign in with Apple, you are asked to confirm with Apple during deletion and Çivi's
+authorization for your Apple ID is revoked at Apple. If you cannot
+access the App, you can also request deletion by emailing
+<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a> from your registered address.</p>
+<p><strong>GDPR (EU/EEA):</strong> You have the rights of access, rectification, erasure,
+restriction, data portability and objection, and may withdraw consent at any time. You may lodge
+a complaint with your local data protection authority.</p>
+<p><strong>KVKK (Turkey):</strong> Under Article 11 of Law No. 6698 you have the right to learn
+whether your data is processed, request information, learn the purpose and whether it is used
+accordingly, know the third parties it is transferred to, request correction, request
+erasure/destruction, request notification of these to third parties, object to an adverse result
+arising solely from automated analysis, and claim compensation.</p>
+<p>Requests: <a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a>. We respond within 30
+days at the latest.</p>
 
-<h2>13. Children's Privacy</h2>
-<p>Çivi is a job-search and career tool not directed at children, and we do not
-knowingly collect data from individuals under the age of 13 (or the applicable
-minimum age in your region).</p>
+<h2>15. Children's Privacy</h2>
+<p>Çivi is a job-search and career tool not directed at children, and we do not knowingly collect
+data from anyone under 13 (or the applicable minimum age in your region).</p>
 
-<h2>14. Changes to This Policy</h2>
-<p>This Privacy Policy may be updated from time to time. Material changes may be
-communicated in-app. The current version is always published at this page.</p>
+<h2>16. Changes</h2>
+<p>This policy may be updated; the current version is always published on this page with the
+date at the top updated. We may announce material changes in the App.</p>
 
-<h2>15. Contact</h2>
-<p>For any privacy-related questions:
-<a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a></p>
+<h2>17. Contact</h2>
+<p><a href="mailto:civiapps@gmail.com">civiapps@gmail.com</a></p>
 
 </div>
 
 <footer>
-  Çivi — Gizlilik Politikası / Privacy Policy · <a href="#tr">TR</a> · <a href="#en">EN</a>
+  Çivi — Gizlilik Politikası / Privacy Policy · <a href="#tr">TR</a> · <a href="#en">EN</a> ·
+  <a href="support.html">Destek / Support</a>
 </footer>
 
 </body>
